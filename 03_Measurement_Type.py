@@ -2,46 +2,7 @@
 
 # Function
 
-# Main Routine
-shape_input = input('''
-Which shape would you like to use out of these?
-Press:
-<A> for square
-<B> for rectangle
-<C> for triangle
-<D> for circle
-<E> for parallelogram''')
-print()
-
-type_input = input('''
-What type of measurement would you like to choose?''')
-
-if shape_input == "d":
-    print('''
-What type of measurement would you like to choose?
-
-<1> for Area
-<3> for Diameter
-<4> for Circumference
-<5> for Radius''')
-elif shape_input == "D":
-    print('''
-What type of measurement would you like to choose?
-
-<1> for Area
-<3> for Diameter
-<4> for Circumference
-<5> for Radius''')
-else:
-    print('''
-What type of measurement would you like to choose?
-
-<1> for Area
-<2> for Perimeter''')
-
-types = ["you have chosen area", "you have chosen Perimeter", "You have chosen Diameter",
-         "You have chosen Circumference", "You have chosen Radius"]
-
+# Integer Checking function
 
 # Shape list
 
@@ -74,7 +35,7 @@ Shapes = ['''
                  '-._             :
                      '-._          :
                          '-:_       :
-        d                     '-._   :
+                             '-._   :
                                  '-._)''', '''
                      _____
                  ,-~"     "~-.
@@ -98,6 +59,20 @@ Shapes = ['''
 /________________________________/''']
 
 
+types = ["you have chosen area", "you have chosen Perimeter", "You have chosen Diameter",
+         "You have chosen Circumference", "You have chosen Radius"]
+
+# Main Routine
+shape_input = input('''
+Which shape would you like to use out of these?
+Press:
+<A> for square
+<B> for rectangle
+<C> for triangle
+<D> for circle
+<E> for parallelogram''')
+print()
+response = int(input(shape_input))
 if shape_input == "a":
     print(Shapes[-5])
 elif shape_input == "A":
@@ -119,9 +94,21 @@ elif shape_input == "e":
 elif shape_input == "E":
     print(Shapes[-1])
 else:
-    print()
     print("Please select a letter from the list above")
-    print()
+
+    return
+
+
+
+
+type_input = input('''
+What type of measurement would you like to choose?
+<1> for Area
+<2> for Perimeters
+<3> for Diameter
+<4> for Circumference
+<5> for Radius ''')
+
 
 if type_input == "1":
     print(types[-5])
@@ -138,5 +125,5 @@ else:
     print("Please select a number from the list above")
     print()
 
-    print("Please select a number from the list above")
+
 
