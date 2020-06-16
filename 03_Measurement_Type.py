@@ -3,7 +3,6 @@
 # Function
 
 # Main Routine
-<<<<<<< HEAD
 shape_input = input('''
 Which shape would you like to use out of these?
 Press:
@@ -13,27 +12,41 @@ Press:
 <D> for circle
 <E> for parallelogram''')
 print()
-=======
-
->>>>>>> 35e6b6719ca36076fb2af23614a1b653fe1c8c04
 
 type_input = input('''
+What type of measurement would you like to choose?''')
+
+if shape_input == "d":
+    print('''
 What type of measurement would you like to choose?
 
 <1> for Area
-<2> for Perimeter
 <3> for Diameter
 <4> for Circumference
 <5> for Radius''')
+elif shape_input == "D":
+    print('''
+What type of measurement would you like to choose?
+
+<1> for Area
+<3> for Diameter
+<4> for Circumference
+<5> for Radius''')
+else:
+    print('''
+What type of measurement would you like to choose?
+
+<1> for Area
+<2> for Perimeter''')
 
 types = ["you have chosen area", "you have chosen Perimeter", "You have chosen Diameter",
          "You have chosen Circumference", "You have chosen Radius"]
 
-<<<<<<< HEAD
+
 # Shape list
 
 Shapes = ['''
- ___________________
+  ___________________
 |                   |
 |                   |
 |                   |
@@ -41,6 +54,7 @@ Shapes = ['''
 |                   |
 |                   |
 |___________________|''', '''
+
  ___________________________________
 |                                   |
 |                                   |
@@ -60,7 +74,7 @@ Shapes = ['''
                  '-._             :
                      '-._          :
                          '-:_       :
-                             '-._    :
+        d                     '-._   :
                                  '-._)''', '''
                      _____
                  ,-~"     "~-.
@@ -109,8 +123,6 @@ else:
     print("Please select a letter from the list above")
     print()
 
-=======
->>>>>>> 35e6b6719ca36076fb2af23614a1b653fe1c8c04
 if type_input == "1":
     print(types[-5])
 elif type_input == "2":
@@ -122,11 +134,9 @@ elif type_input == "4":
 elif type_input == "5":
     print(types[-1])
 else:
-<<<<<<< HEAD
     print()
     print("Please select a number from the list above")
     print()
-=======
+
     print("Please select a number from the list above")
 
->>>>>>> 35e6b6719ca36076fb2af23614a1b653fe1c8c04
