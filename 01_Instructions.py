@@ -5,22 +5,28 @@
 
 def instructions():
 
-    print('''****** Welcome To The Measurement Calculator 
-    ******''')
+    print('''****** Welcome To The Measurement Calculator ******''')
 
-    first_time = input("\nHave you used this program before? ")
+    first_time = input("\nPress <v> to view the instructions or <s> to skip ")
 
-    if first_time == "yes":
+    if first_time == "s":
         return ""
+    elif first_time == "v":
+        print('''
+                      ***** Instructions ******
 
-
-print()
-print('''
 This program is a tool that you can use for your measurement homework.
-All you have to do is choose your desired shape like squares, rectangles, 
-triangles, parallelograms and circles. Then the type of measurement 
+All you have to do is choose your desired shape like squares, rectangles,
+triangles, parallelograms and circles. Then the type of measurement
 you want like area, perimeter, diameter, radius and circumference.
-It will the calculate for your
-''')
+It will then calculate it for you and show you the method so you can do
+it yourself next time''')
 
+    else:
+        print("Please type either <s> or <v>")
+        return ""
 instructions()
+print()
+print()
+
+

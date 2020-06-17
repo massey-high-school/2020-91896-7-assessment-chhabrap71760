@@ -66,7 +66,6 @@ Shapes = ['''
 
 if shape_input == "a":
     print(Shapes[-5])
-elif shape_input == "A":
     print(Shapes[-5])
 elif shape_input == "b":
     print(Shapes[-4])
