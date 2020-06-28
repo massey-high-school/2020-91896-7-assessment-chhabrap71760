@@ -20,7 +20,7 @@ This program is a tool that you can use for your measurement homework.
 All you have to do is choose your desired shape like squares, rectangles, 
 triangles, parallelograms and circles. Then the type of measurement 
 you want like area, perimeter, diameter, radius and circumference.
-It will the calculate for your
-''')
+It will then calculate it for you and give you the method so you can do
+it yourself next time.''')
 
 instructions()
