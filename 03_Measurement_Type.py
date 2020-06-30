@@ -2,7 +2,7 @@
 # Ask the user what type of measurement they want
 
 
-# Function (Allows the user to either enter in the word or the first letter of the word)
+# String Checking Function (Allows the user to either enter in the word or the first letter of the word)
 def string_checker(question, to_check):
 
     valid = False

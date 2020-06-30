@@ -1,7 +1,7 @@
 # Component 2 - Choose shape
 
 
-# Function (Allows the user to enter the right letter assigned to their desired shape)
+# Shape Choosing Function (Allows the user to enter the right letter assigned to their desired shape)
 def choose_shape(shape_list):
 
     valid = False
@@ -15,7 +15,8 @@ Press:
 • <B> for rectangle
 • <C> for triangle
 • <D> for Parallelogram
------------------------------------------------''').lower()
+-----------------------------------------------''').lower()  # The .lower() allows the user to type capital letters
+
         print()
 
         if shape_input == "a":
@@ -27,7 +28,7 @@ Press:
         elif shape_input == "d":
             print(shape_list[-1])
         else:
-            print("Please select a letter from the list above")  # Prints this error message if the user enters anything else
+            print("Please select a letter from the list above")   # Prints this error message if the user enters invalid
             continue
 
         return shape_input  # This returns the question after the error message so the user can try again
@@ -35,7 +36,7 @@ Press:
 
 # Main routine
 
-# Shape list
+# This is a list that holds my shapes
 shapes = [''' 
  ___________________
 |                   |
