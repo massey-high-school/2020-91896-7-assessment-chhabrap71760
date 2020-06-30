@@ -53,7 +53,7 @@ def string_checker(question, to_check):
 
 
 # Number Checking Function (This function is for when the user enters a number below zero or just not a number
-def num_check(question):
+def number_checker(question):
 
     error = "Please enter a number that is more than zero"
 
@@ -120,7 +120,7 @@ print(chosen_shape)
 types = ["area", "perimeter", ]  # List of types of measurement
 
 # Asks the user for their input and displays their options
-choose = string_checker('''
+choose_type = string_checker('''
 -----------------------------------------------------------------
 Please enter in the type of measurement,
 you can either enter the whole word or just enter the first letter
@@ -128,7 +128,19 @@ you can either enter the whole word or just enter the first letter
 • Area
 • Perimeter
 -----------------------------------------------------------------''', types)
-print()
-print(choose)
+print(choose_type)
 
-# Ask for the dimensions
+# Enter dimensions
+
+if chosen_shape == "a" and choose_type == "area":
+    int(input("Enter the value of a side:"))
+elif chosen_shape == "a" and choose_type == "perimeter":
+    int(input("Enter the value of a side:"))
+elif chosen_shape == "b" and choose_type == "area":
+    input("Enter the value of the length (base)")
+    input("Enter the value of the width (height)")
+elif chosen_shape == "b" and choose_type == "perimeter":
+    int(input("Enter the value of the length (base)"))
+    int(input("Enter the value of the width (height)"))
+else:
+    print("Please enter a number that is more than zero")
