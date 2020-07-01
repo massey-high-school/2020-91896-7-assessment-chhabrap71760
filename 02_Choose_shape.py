@@ -79,4 +79,3 @@ shapes = ['''
 
 
 chosen_shape = choose_shape(shapes)
-print(chosen_shape)

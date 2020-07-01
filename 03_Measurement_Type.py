@@ -25,7 +25,7 @@ def string_checker(question, to_check):
 types = ["area", "perimeter", ]  # List of types of measurement
 
 # Asks the user for their input and displays their options
-choose = string_checker('''
+choose_type = string_checker('''
 -----------------------------------------------------------------
 Please enter in the type of measurement, 
 you can either enter the whole word or just enter the first letter
@@ -34,4 +34,4 @@ you can either enter the whole word or just enter the first letter
 • Perimeter
 -----------------------------------------------------------------''', types)
 print()
-print(choose)
+print(choose_type)

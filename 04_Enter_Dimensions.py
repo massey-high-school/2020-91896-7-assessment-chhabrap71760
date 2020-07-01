@@ -63,12 +63,35 @@ def number_checker(question):
             response = float(input(question))
 
             if response <= 0:
+                print()
                 print(error)
+                print()
             else:
                 return response
 
         except ValueError:
+            print()
             print(error)
+            print()
+
+
+def yes_no(question):
+
+    to_check = ["yes", "no"]
+
+    valid = False
+    while not valid:
+
+        response = input(question).lower()
+
+        for item in to_check:
+            if response == item:
+                return response
+            elif response == item[0]:
+                return item
+        print()
+        print("Please enter either yes or no...\n")
+        print()
 
 
 # Main Routine
@@ -113,10 +136,7 @@ shapes = ['''
  /                                /
 /________________________________/''']
 
-
 chosen_shape = choose_shape(shapes)
-print(chosen_shape)
-
 types = ["area", "perimeter", ]  # List of types of measurement
 
 # Asks the user for their input and displays their options
@@ -129,18 +149,33 @@ you can either enter the whole word or just enter the first letter
 • Perimeter
 -----------------------------------------------------------------''', types)
 print(choose_type)
-
-# Enter dimensions
+print()
 
 if chosen_shape == "a" and choose_type == "area":
-    int(input("Enter the value of a side:"))
+    side = number_checker("Please enter the value of a side:")
 elif chosen_shape == "a" and choose_type == "perimeter":
-    int(input("Enter the value of a side:"))
+    side = number_checker("Please enter the value of a side:")
 elif chosen_shape == "b" and choose_type == "area":
-    input("Enter the value of the length (base)")
-    input("Enter the value of the width (height)")
+    height = number_checker("Please enter the height:")
+    width = number_checker("please enter the width:")
 elif chosen_shape == "b" and choose_type == "perimeter":
-    int(input("Enter the value of the length (base)"))
-    int(input("Enter the value of the width (height)"))
-else:
-    print("Please enter a number that is more than zero")
+    height = number_checker("Please enter the height:")
+    width = number_checker("please enter the width:")
+elif chosen_shape == "c" and choose_type == "area":
+    base = number_checker("Please enter the base:")
+    height = number_checker("Please enter the height:")
+elif chosen_shape == "c" and choose_type == "perimeter":
+    side1 = number_checker("Please enter the value of a side:")
+    side2 = number_checker("Please enter the value of a side:")
+    side3 = number_checker("Please enter the value of a side:")
+elif chosen_shape == "d" and choose_type == "area":
+    have_height = yes_no("do you have a height?")
+    if have_height == "no":
+        area = number_checker("Please enter the area:")
+        base = number_checker("Please enter the base:")
+    elif have_height == "yes":
+        height = number_checker("Please enter the height:")
+        base = number_checker("Please enter the base:")
+elif chosen_shape == "d" and choose_type == "perimeter":
+    height = number_checker("Please enter the height:")
+    base = number_checker("please enter the height:")
