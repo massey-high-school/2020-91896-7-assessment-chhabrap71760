@@ -55,7 +55,7 @@ def string_checker(question, to_check):
 # Number Checking Function (This function is for when the user enters a number below zero or just not a number
 def number_checker(question):
 
-    error = "Please enter a number that is more than zero"
+    error = "Please enter a number that is more than zero"  # Prints error message
 
     valid = False
     while not valid:
@@ -75,6 +75,7 @@ def number_checker(question):
             print()
 
 
+# This is a function that comes into play when the user enters an invalid response in a yes/no question
 def yes_no(question):
 
     to_check = ["yes", "no"]
@@ -90,7 +91,7 @@ def yes_no(question):
             elif response == item[0]:
                 return item
         print()
-        print("Please enter either yes or no...\n")
+        print("Please enter either yes or no...\n")  # Prints error message
         print()
 
 
@@ -151,31 +152,42 @@ you can either enter the whole word or just enter the first letter
 print(choose_type)
 print()
 
+# This piece of heavily messy code asks the dimensions according to what the user chose earlier
 if chosen_shape == "a" and choose_type == "area":
     side = number_checker("Please enter the value of a side:")
+    print(shapes[-4])
+    print("side = {}".format(side))
 elif chosen_shape == "a" and choose_type == "perimeter":
     side = number_checker("Please enter the value of a side:")
+    print(shapes[-4])
+    print("side = {}".format(side))
 elif chosen_shape == "b" and choose_type == "area":
-    height = number_checker("Please enter the height:")
+    length = number_checker("Please enter the length:")
     width = number_checker("please enter the width:")
+    print(shapes[-3])
+    print("length = {}".format(length))
+    print("width = {}".format(width))
 elif chosen_shape == "b" and choose_type == "perimeter":
-    height = number_checker("Please enter the height:")
+    length = number_checker("Please enter the length:")
     width = number_checker("please enter the width:")
+    print(shapes[-3])
+    print("length = {}".format(length))
+    print("width = {}".format(width))
 elif chosen_shape == "c" and choose_type == "area":
     base = number_checker("Please enter the base:")
     height = number_checker("Please enter the height:")
 elif chosen_shape == "c" and choose_type == "perimeter":
     side1 = number_checker("Please enter the value of a side:")
-    side2 = number_checker("Please enter the value of a side:")
-    side3 = number_checker("Please enter the value of a side:")
+    side2 = number_checker("Please enter the value of another side:")
+    side3 = number_checker("Please enter the value of another side:")
 elif chosen_shape == "d" and choose_type == "area":
-    have_height = yes_no("do you have a height?")
-    if have_height == "no":
+    have_height = yes_no("do you have a height?")                            # This part asks the user just in case if
+    if have_height == "no":                                                  # they already have a height
         area = number_checker("Please enter the area:")
         base = number_checker("Please enter the base:")
-    elif have_height == "yes":
-        height = number_checker("Please enter the height:")
+    elif have_height == "yes":                                              # And if they do it'll continue asking
+        height = number_checker("Please enter the height:")                    # the values to get the area
         base = number_checker("Please enter the base:")
 elif chosen_shape == "d" and choose_type == "perimeter":
     height = number_checker("Please enter the height:")
-    base = number_checker("please enter the height:")
+    base = number_checker("please enter the base:")
