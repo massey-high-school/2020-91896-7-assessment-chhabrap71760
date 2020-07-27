@@ -145,8 +145,7 @@ shape_list = ["square", "rectangle", "triangle", "parallelogram"]
 
 instructions()
 
-# Initialise List
-shape_type_total = []
+# Initialise Master List
 calculation_history = []
 
 # Asks the user how many questions they have
@@ -156,7 +155,12 @@ print()
 
 questions_played = 0
 
+# Creates loop for the questions
 while questions_played < questions:
+
+    # Initialise list for shape question info
+    shape_type_total = []
+
     print()
     print("^^ Calculation {} ^^".format(questions_played+1))
     print()
@@ -172,9 +176,6 @@ You can either enter the whole word just enter the first letter
 -----------------------------------------------''', shape_list)
     print(shape_input)
     print()
-
-    # Add shape to the calculation history
-    shape_type_total.append(shape_input)
 
     # List of types of measurement
     types = ["area", "perimeter", ]
@@ -192,20 +193,22 @@ you can either enter the whole word or just enter the first letter
     print(choose_type)
     print()
 
-    # Add type to the calculation history
+    # Add shape and type to the calculation history
+    shape_type_total.append(shape_input)
     shape_type_total.append(choose_type)
 
     area = 0
     perimeter = 0
     heightP = 0
 
-
+    while questions_played > questions:
+        break
 # This piece of heavily messy code asks the dimensions according to what the user chose earlier and prints it with shape
 
     # Square and Area
     if shape_input == "square" and choose_type == "area":
         side = number_checker("Please enter the value of a side:")
-        area = side * 2
+        area = side * side
         print(shapes[-4])
         print("side = {}".format(side))
         print()
@@ -398,17 +401,23 @@ you can either enter the whole word or just enter the first letter
     elif explain == "no":
         questions_played += 1
 
+    # Adds the small list to the master list
+    calculation_history.append(shape_type_total)
 
-calculation_history.append(shape_type_total)
-
-print(calculation_history)
-
-print()
-print("***** Calculation History *****")
-
+# Prints the calculation history
+print('''
+---------------------------------------------------
+-----           Calculation History           -----
+---------------------------------------------------
+-|       Shape      |       Type    | Answer     |-''')
 for item in calculation_history:
-    print("{} - {} - {}".format(item[0], item[1], item[2]))
+    print("-|", item[0], " "*(15-len(item[0])), "|",
+          item[1], " "*(12-len(item[1])), "|",
+          item[2], " "*(9-len(str(item[2]))), "|-",)
+print("---------------------------------------------------")
+print("----------------------| {} Questions Calculated |---".format(questions_played))
 
+# Thank the user for using this tool
 print()
 print("^^^^ Thank You for using Measurement Calculator :) ^^^^")
 print()
